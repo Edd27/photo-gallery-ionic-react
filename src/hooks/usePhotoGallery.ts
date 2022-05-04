@@ -21,10 +21,10 @@ export const usePhotoGallery = () => {
     if (isPlatform('hybrid')) {
       const file = await Filesystem.readFile({
         path: photo.path!,
-      });
-      base64Data = file.data;
+      })
+      base64Data = file.data
     } else {
-      base64Data = await base64FromPath(photo.webPath!);
+      base64Data = await base64FromPath(photo.webPath!)
     }
 
     const savedFile = await Filesystem.writeFile({
