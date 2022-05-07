@@ -6,6 +6,10 @@ import { usePhotoGallery } from '../hooks/usePhotoGallery';
 const Tab2: React.FC = () => {
   const {photos, takePhoto} = usePhotoGallery()
 
+  const handleClick = async () => {
+    await takePhoto()
+  }
+
   return (
     <IonPage>
       <IonHeader>
@@ -24,7 +28,7 @@ const Tab2: React.FC = () => {
           </IonRow>
         </IonGrid>
         <IonFab vertical='bottom' horizontal='center' slot='fixed'>
-          <IonFabButton onClick={() => takePhoto()}>
+          <IonFabButton onClick={() => handleClick()}>
             <IonIcon icon={camera}/>
           </IonFabButton>
         </IonFab>
